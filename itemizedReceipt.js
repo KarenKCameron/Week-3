@@ -2,8 +2,15 @@
 // with these properties: {descr, price}
 // i.e. {descr: 'Coke', price: 1.99}
 // function should log each item to the console and log a total price
-
-
+const taxRate = .101 //Sales tax rate for my city is 10.1%, although later on perhaps this could be pulled from a data list. 
+const logReceipt = function(...menuItems){
+  let subTotal = 0;
+  menuItems.forEach(function(menuItems){
+    subTotal += menuItems.price;
+    tax = menuItems.price * taxRate;
+    console.log(`${menuItems.descr}: ${menuItems.price} Tax: ${tax} Total: ${subTotal + tax}`)
+  })
+}
 
 // Check
 logReceipt(
